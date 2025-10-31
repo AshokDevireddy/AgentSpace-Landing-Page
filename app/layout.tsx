@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
+const playfair = Playfair_Display({ subsets: ["latin"], weight: ["400", "700"] });
 
 export const metadata: Metadata = {
   title: "AgentSpace - The Future of Insurance Sales Distribution",
@@ -18,23 +19,26 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="min-h-screen flex flex-col">
-          <header className="border-b border-gray-200 bg-white/80 backdrop-blur-md sticky top-0 z-50">
+        <div className="min-h-screen flex flex-col bg-white">
+          <header className="border-b border-gray-100 bg-white sticky top-0 z-50">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="flex justify-between items-center py-4">
-                <Link href="/" className="text-2xl font-bold bg-gradient-to-r from-primary-600 to-primary-800 bg-clip-text text-transparent">
+              <div className="flex justify-between items-center py-5">
+                <Link href="/" className={`text-3xl font-bold text-black tracking-tight ${playfair.className}`}>
                   AgentSpace
                 </Link>
-                <nav className="hidden md:flex space-x-8">
-                  <Link href="/" className="text-gray-700 hover:text-primary-600 transition-colors">
-                    Home
-                  </Link>
-                  <Link href="/terms" className="text-gray-700 hover:text-primary-600 transition-colors">
+                <nav className="hidden md:flex items-center space-x-8">
+                  <Link href="/terms" className="text-sm text-gray-600 hover:text-black transition-colors">
                     Terms
                   </Link>
-                  <Link href="/privacy" className="text-gray-700 hover:text-primary-600 transition-colors">
+                  <Link href="/privacy" className="text-sm text-gray-600 hover:text-black transition-colors">
                     Privacy
                   </Link>
+                  <a
+                    href="mailto:ashok@useagentspace.com?subject=AgentSpace Demo Request"
+                    className="px-5 py-2.5 bg-black text-white text-sm font-medium rounded-lg hover:bg-gray-800 transition-colors"
+                  >
+                    Request Demo
+                  </a>
                 </nav>
               </div>
             </div>
@@ -42,20 +46,20 @@ export default function RootLayout({
           <main className="flex-1">
             {children}
           </main>
-          <footer className="border-t border-gray-200 bg-gray-50">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <footer className="border-t border-gray-100 bg-white">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
               <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-                <div className="text-gray-600 text-sm">
+                <div className="text-gray-500 text-sm">
                   © 2025 AgentSpace Inc. All rights reserved.
                 </div>
                 <div className="flex space-x-6 text-sm">
-                  <Link href="/terms" className="text-gray-600 hover:text-primary-600 transition-colors">
+                  <Link href="/terms" className="text-gray-500 hover:text-black transition-colors">
                     Terms & Conditions
                   </Link>
-                  <Link href="/privacy" className="text-gray-600 hover:text-primary-600 transition-colors">
+                  <Link href="/privacy" className="text-gray-500 hover:text-black transition-colors">
                     Privacy Policy
                   </Link>
-                  <a href="mailto:ashok@useagentspace.com" className="text-gray-600 hover:text-primary-600 transition-colors">
+                  <a href="mailto:ashok@useagentspace.com" className="text-gray-500 hover:text-black transition-colors">
                     Contact
                   </a>
                 </div>
