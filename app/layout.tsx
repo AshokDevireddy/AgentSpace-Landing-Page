@@ -34,7 +34,15 @@ export default function RootLayout({
                     Privacy
                   </Link>
                   <a
-                    href="mailto:ashok@useagentspace.com?subject=AgentSpace Demo Request"
+                    href="https://app.useagentspace.com"
+                    className="text-sm text-gray-600 hover:text-black transition-colors font-medium"
+                  >
+                    Login
+                  </a>
+                  <a
+                    href="https://cal.com/ashok-devireddy/30min"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="px-5 py-2.5 bg-black text-white text-sm font-medium rounded-lg hover:bg-gray-800 transition-colors"
                   >
                     Request Demo
